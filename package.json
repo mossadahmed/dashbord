@@ -1,0 +1,45 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.13.9",
+    "@fortawesome/fontawesome-svg-core": "^7.0.0",
+    "@fortawesome/free-solid-svg-icons": "^7.0.0",
+    "@fortawesome/vue-fontawesome": "^3.1.1",
+    "@nuxt/content": "^3.6.3",
+    "@nuxt/eslint": "^1.7.1",
+    "@nuxt/image": "^1.11.0",
+    "@nuxt/scripts": "^0.11.10",
+    "@nuxt/test-utils": "^3.19.2",
+    "@nuxt/ui": "^3.3.0",
+    "@nuxtjs/cloudinary": "^4.0.0",
+    "@pinia/nuxt": "^0.11.2",
+    "@tailwindcss/vite": "^4.1.11",
+    "@unhead/vue": "^2.0.12",
+    "@vue/apollo-composable": "^4.2.2",
+    "cloudinary": "^2.7.0",
+    "eslint": "^9.32.0",
+    "graphql": "^16.11.0",
+    "nuxt": "^4.0.1",
+    "tailwindcss": "^4.1.11",
+    "typescript": "^5.8.3",
+    "vee-validate": "^4.15.1",
+    "vue": "^3.5.18",
+    "vue-router": "^4.5.1",
+    "yup": "^1.6.1"
+  },
+  "devDependencies": {
+    "@element-plus/nuxt": "^1.1.4",
+    "@unocss/nuxt": "^66.3.3",
+    "element-plus": "^2.10.4",
+    "sass": "^1.89.2"
+  }
+}
