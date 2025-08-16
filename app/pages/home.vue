@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/no-parsing-error -->
 <template>
-    <div class="container w-full  ml-60">
+    <div class="container w-[84%] ml-60">
         <div v-if="myAcount" class="bg-gray-50 pl-7 h-fit">
             <div class="p-3">
                 <div>
@@ -54,11 +54,7 @@
                 <p class="text-gray-400">{{ myAcount.role }}</p>
             </div>
         </div>
-        <div
-            class=" w-fit px-10 ml-5 border-2 rounded-xl border-gray-300 shadow hover:bg-gradient-to-l from-pink-500 to-red-500 hover:text-white p-2 duration-500">
-            <NuxtLink to="/updat-my-profile"> Updat My Profile </NuxtLink>
 
-        </div>
     </div>
 </template>
 

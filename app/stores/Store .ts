@@ -2,28 +2,29 @@
 import { defineStore } from 'pinia'
 import { useCookie, navigateTo } from '#app'
 import { logInData } from '~/composable/login'
+
 export const useUserStore = defineStore('user', () => {
-  const token = useCookie('token')
+  const token = useCookie<string | null>('token')
+
+  const isAuthenticated = computed(() => !!token.value) 
+
   const logIn = async (email: string, password: string) => {
     try {
       const userData = await logInData(email, password)
 
-      if (userData) {
+      if (userData?.token) {
         token.value = userData.token
-
         return true
-      } else {
-        return false
       }
+      return false
     } catch (error) {
-      console.error('erorr', error)
+      console.error('Login error:', error)
       return false
     }
   }
 
   const logout = () => {
-    token.value = ''
-
+    token.value = null
     navigateTo('/')
   }
 
@@ -31,6 +32,6 @@ export const useUserStore = defineStore('user', () => {
     logIn,
     logout,
     token,
-
+    isAuthenticated
   }
 })

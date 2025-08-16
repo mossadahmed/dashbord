@@ -40,7 +40,6 @@
             <input v-model="password" :type="ShowPassword ? 'text' : 'password'" placeholder="Password"
               class="w-full pl-10 pr-10 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-pink-400">
             <div class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
-              <FontAwesomeIcon icon="lock" />
             </div>
             <div class="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-gray-400"
               @click="ShowPassword = !ShowPassword">

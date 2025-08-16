@@ -38,10 +38,6 @@ onMounted(async () => {
       }
     })
 
-    if (!res.ok) {
-      return navigateTo('/login')
-    }
-
     const fetchedUser = await res.json()
     user.value = fetchedUser
   } catch (e) {
@@ -51,13 +47,10 @@ onMounted(async () => {
     loading.value = false
   }
   if (user.value?.role !== 'admin') {
-    alert("yor not admin")
     return navigateTo('/home')
   }
 })
-definePageMeta({
-  middleware: 'admin'
-})
+
 </script>
 
 <template>

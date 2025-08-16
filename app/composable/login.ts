@@ -5,7 +5,7 @@ export const logInData = async (email: string, password: string) => {
     const response = await fetch('https://api.escuelajs.co/api/v1/auth/login', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json', 
       },
       body: JSON.stringify({ email, password }),
     });
@@ -17,7 +17,11 @@ export const logInData = async (email: string, password: string) => {
     const data = await response.json();
 
     if (data?.access_token) {
-      const token = useCookie('token');
+      const token = useCookie('token', {
+        maxAge: 60 * 60 * 24 * 7,
+        sameSite: 'strict',
+        secure: process.env.NODE_ENV === 'production'
+      });
       token.value = data.access_token;
 
       return {
@@ -28,9 +32,7 @@ export const logInData = async (email: string, password: string) => {
   } catch (error) {
     console.error('Login error:', error);
     return {
-
       token: null,
-
     };
   }
 };

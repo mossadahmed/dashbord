@@ -25,7 +25,7 @@ const toggleBlockUser = () => {
 </script>
 
 <template>
-  <div class="container w-full ml-60">
+  <div class="container w-[84%] ml-60">
     <div v-if="userStore.singleUser" class="bg-gray-50 pl-7 h-fit">
       <div class="p-3">
         <h1 class="text-2xl font-bold">Users</h1>
